@@ -64,5 +64,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: "usedfurniturebuyermadinah"  # your Cloudflare Pages project name
-          directory: frontend/dist
+          directory: frontend/out
           wranglerVersion: 2
