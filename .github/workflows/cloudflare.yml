@@ -28,7 +28,7 @@ jobs:
       # 3️⃣ Setup pnpm
       - name: Setup pnpm
         run: |
-          npm install -g pnpm@8
+          npm install -g pnpm@11
           pnpm -v
 
       # 4️⃣ Cache pnpm store and node_modules
@@ -50,7 +50,7 @@ jobs:
       # 6️⃣ Install dependencies using pnpm
       - name: Install dependencies
         working-directory: ./frontend
-        run: pnpm install
+        run: pnpm install --ignore-scripts
 
       # 7️⃣ Build Next.js static site
       - name: Build Next.js static site
