@@ -1,0 +1,6 @@
+{
+  "name": "Used Furniture Buyer Madinah",
+  "description": "A modern, optimized dual-language website to browse and sell secondhand furniture in Madinah, featuring direct contact via WhatsApp/IMO, quick call system, and Arabic-first accessibility.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

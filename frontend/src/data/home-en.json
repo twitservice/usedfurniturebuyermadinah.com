@@ -1,0 +1,175 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "loadingText": "MD Sabuj Miah Trading - Updating contents and loading next sections...",
+  "companyName": "MD Sabuj Miah Secondhand Used Furniture Buying Est.",
+  "companySlogan": "We Buy Your Secondhand Used Furniture & Electric Domestic Appliances at the Best Prices inside Madina",
+  "nav": {
+    "home": "Home",
+    "services": "Our Services",
+    "howItWorks": "Our Process",
+    "products": "Explore Items",
+    "contact": "Contact Us"
+  },
+  "contact": {
+    "workingHoursValue": "Available 24 hours / 7 days for direct assistance",
+    "subtitle": "Always at your service in all neighborhoods of Madinah, 24/7",
+    "phoneLabel": "Direct Telephone hotline support (24h):",
+    "emailLabel": "Official administration support email address:",
+    "emailClick": "Click here to send an email query",
+    "locationLabel": "Main dispatch & trucks station location:",
+    "locationValue": "As Sadiqiyyah, Madinah, Saudi Arabia - We cover Sultana, Al-Khalidiyah, Al-Awali, Al-Jurf, Al-Azhari and adjacent regions",
+    "sendMsgBtn": "Send actual photos of items on WhatsApp",
+    "imoBtn": "IMO voice calling & chat support",
+    "callBtn": "Make a direct telephone voice call"
+  },
+  "hero": {
+    "badge": "No.1 Approved Secondhand Furniture Buyer in Madinah",
+    "title": "We Purchase Secondhand Furniture & Home Appliances",
+    "highlight": "at the Highest Cash Payout Rates in Madinah!",
+    "description": "Looking to upgrade your home or trade in heavy wood bedrooms, luxury sofas, GCC modular majlas, split & window ACs, double fridges, washing machines, or custom steel kitchens? We promise honest evaluation, instant hard cash before loading, and 100% free technical disassembly & truck towing!",
+    "ctaCall": "Call MD Sabuj Miah Directly Now",
+    "ctaWhatsapp": "Get Valuation Quote on WhatsApp",
+    "stats": [
+      {
+        "value": "3+ Years",
+        "label": "Local Trading History"
+      },
+      {
+        "value": "900+",
+        "label": "Successful Appraisals"
+      },
+      {
+        "value": "100% Cash",
+        "label": "Paid In Hand On-Site"
+      }
+    ]
+  },
+  "categories": {
+    "title": "Major Items & Appliances We Buy",
+    "subtitle": "Explore our primary focus trade categories. We guarantee fair quotes without buying pressure",
+    "list": [
+      {
+        "id": "bedroom",
+        "name": "Bedrooms & closets",
+        "desc": "We purchase complete master bedroom sets, children's bed layouts, multi-door closets, and makeup dressers."
+      },
+      {
+        "id": "living",
+        "name": "Sofas & Arabic majlas",
+        "desc": "We buy large room L-shape sofas, classic GCC style corner majlas sets, wool carpets, and window drapes."
+      },
+      {
+        "id": "appliances",
+        "name": "Appliances & AC units",
+        "desc": "We buy split & window ACs, large fridges, washing machines, dishwashers, and microwave ovens."
+      },
+      {
+        "id": "kitchen",
+        "name": "Modular kitchen cabinets",
+        "desc": "We buy aluminum and sturdy wood custom kitchens, cabinets, and steel sinks with free removal."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Liquidate Your Old Furniture in 3 Steps",
+    "subtitle": "Easy, quick, and stress-free. We handle everything from hard lifting to free transport",
+    "steps": [
+      {
+        "num": "1",
+        "title": "Call us or text photos of items",
+        "description": "Give us a direct cell call or send snapshots of your bedrooms, sofas, kitchen, or AC appliances on WhatsApp for an immediate baseline estimate."
+      },
+      {
+        "num": "2",
+        "title": "Real-time, trustworthy valuation",
+        "description": "Our rep visits your residence in Madinah within 60 minutes for a quick physical appraisal, offering you the absolute highest trade value."
+      },
+      {
+        "num": "3",
+        "title": "Instant cash payment & removal",
+        "description": "We hand over the full agreed amount dynamically in cash, and then our on-board carpenter dismantles and loads everything safely."
+      }
+    ]
+  },
+  "productsSection": {
+    "title": "Samples of Items We Recently Purchased in Madina",
+    "subtitle": "Take a look at actual item photos and transaction price ranges we happily settled with our valued clients",
+    "priceLabel": "Estimated Purchase Price Range:",
+    "conditionLabel": "Delivered Condition:",
+    "askBtn": "WhatsApp to sell similar items",
+    "callBtn": "Direct call for rapid appraisal"
+  },
+  "products": [
+    {
+      "id": "prod1",
+      "category": "bedroom",
+      "image": "/assets/bedroom_set.png",
+      "title": "Classic Luxury Wood Bedroom Sets & Closets",
+      "condition": "Excellent (Like New)",
+      "specs": "Heavy structural beechwood • 6 to 8 Piece layout",
+      "desc": "Purchased from clean residential apartments in Madinah containing complete bed sizes, side drawers, mirror dresser vanity and 6-door storage closets.",
+      "price": "1,500 - 3,500 SAR"
+    },
+    {
+      "id": "prod2",
+      "category": "appliances",
+      "image": "/assets/air_conditioner.png",
+      "title": "Secondhand Split & Window AC units in Madina",
+      "condition": "Very Clean & Working",
+      "specs": "18,000 - 24,000 BTU • Carrier, LG, Gree & Beko brands",
+      "desc": "We buy functional and non-functional split and window air conditioners. We provide totally free unbolting, pipe unmounting, and transport.",
+      "price": "700 - 1,250 SAR / Unit"
+    },
+    {
+      "id": "prod3",
+      "category": "appliances",
+      "image": "/assets/refrigerator.png",
+      "title": "Double-Door Samsung & Toshiba Refrigerators",
+      "condition": "Excellent compressor condition",
+      "specs": "Multi Size • 14 to 22 Cubic Feet Frost Free models",
+      "desc": "Purchased refrigerator cooling units in premium running state. We evaluate the compressor and shelves honestly, paying higher than anyone.",
+      "price": "800 - 1,600 SAR"
+    },
+    {
+      "id": "prod4",
+      "category": "living",
+      "image": "/assets/sofa_set.png",
+      "title": "Turkish Modern Living Rooms & Arabic Majlas",
+      "condition": "Stain-Free & Sturdy Frame",
+      "specs": "Complete assembly • Seats up to 12 persons with rugs",
+      "desc": "We buy high-end modular sofas, Turkish upholstery, floor pillows, rugs, and custom curtains. We pay premium quotes for clean fabrics & thick foams.",
+      "price": "1,200 - 3,000 SAR"
+    },
+    {
+      "id": "prod5",
+      "category": "kitchen",
+      "image": "/assets/kitchen_cabinets.png",
+      "title": "Ready-Made Aluminum Kitchen Cabinet Suites",
+      "condition": "Stated modular configuration",
+      "specs": "3 to 5 meter long with steel sink & countertop",
+      "desc": "Acquired sturdy and beautifully fitted modular aluminum/wood kitchens. Our wood carpenters handle clean de-installation without damaging walls.",
+      "price": "1,500 - 3,500 SAR"
+    },
+    {
+      "id": "prod6",
+      "category": "appliances",
+      "image": "/assets/washing_machine.png",
+      "title": "Automatic & Semi Washing Drums & Tents",
+      "condition": "Excellent structural condition",
+      "specs": "7 to 12 KG loading size • Top & Front loaders",
+      "desc": "We seek out automatic washing cylinders, dryers, and commercial kitchen dishwashers. Quick and certified inspection with instant cash delivery.",
+      "price": "600 - 1,300 SAR"
+    },
+    {
+      "id": "prod7",
+      "category": "appliances",
+      "image": "/assets/cooking_range.png",
+      "title": "Premium Five-Burner Stainless Steel Ovens",
+      "condition": "Fine cosmetic clean outlook",
+      "specs": "Safety valves • Glemgas & Turkish high models",
+      "desc": "We obtain stainless steel stove tops, gas stoves, built-in ovens and microwave heating ovens. We estimate burner conditions fairly.",
+      "price": "500 - 1,200 SAR"
+    }
+  ]
+}
