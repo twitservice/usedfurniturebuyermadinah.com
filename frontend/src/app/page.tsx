@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -26,8 +28,8 @@ import {
 } from 'lucide-react';
 
 // Import local translations
-import enData from './data/home-en.json';
-import arData from './data/home-arabic.json';
+import enData from '../data/home-en.json';
+import arData from '../data/home-arabic.json';
 
 // Unsplash high-quality responsive CDN images for static product view
 const PRODUCT_IMAGES: Record<string, string> = {
