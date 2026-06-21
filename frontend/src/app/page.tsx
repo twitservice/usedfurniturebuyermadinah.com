@@ -709,6 +709,77 @@ export default function App() {
             </div>
           </section>
 
+          {/* Recent Items & Services Carousel */}
+          <section id="home-carousel-section" className="bg-slate-50 py-12 border-t border-slate-200 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="flex justify-between items-end mb-8">
+                <div>
+                  <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
+                    {lang === 'ar' ? 'أحدث المشتريات' : 'Recent Inventory'}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+                    {lang === 'ar' ? 'نماذج لخدماتنا ومشترياتنا' : 'Services & Items Demo'}
+                  </h3>
+                </div>
+                <button
+                  onClick={() => triggerSimulatedReload('products')}
+                  className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 px-5 py-2.5 rounded-xl transition-all shadow-sm"
+                >
+                  {lang === 'ar' ? 'عرض المزيد' : 'View More'}
+                  <ChevronRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
+
+              {/* Slider Container */}
+              <div className="flex overflow-x-auto gap-5 snap-x snap-mandatory pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {translations.products.map((prod: any) => (
+                  <div 
+                    key={prod.id} 
+                    className="w-[85vw] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] shrink-0 snap-start bg-white p-4 border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col group cursor-pointer"
+                    onClick={() => {
+                       setSelectedProduct(prod);
+                       triggerSimulatedReload('products');
+                    }}
+                  >
+                    <div className="aspect-video bg-slate-100 rounded-lg mb-4 overflow-hidden relative border border-slate-100">
+                      <img
+                        src={PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
+                        alt={prod.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-2 right-2 bg-slate-900/80 backdrop-blur-xs text-[10px] font-black text-white px-2 py-1 rounded-md">
+                        {prod.category}
+                      </div>
+                    </div>
+                    <h4 className="font-extrabold text-slate-900 text-sm mb-1.5 line-clamp-1">
+                      {prod.title}
+                    </h4>
+                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-3 flex-1">
+                      {prod.desc}
+                    </p>
+                    <div className="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
+                      <span className="text-[10px] font-bold text-slate-400 truncate max-w-[50%]">
+                        {prod.condition}
+                      </span>
+                      <span className="text-xs font-black text-blue-600 truncate max-w-[50%] text-end">
+                        {prod.price}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile View More Button */}
+              <button
+                onClick={() => triggerSimulatedReload('products')}
+                className="w-full sm:hidden mt-2 flex items-center justify-center gap-1.5 text-sm font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 px-5 py-3.5 rounded-xl transition-all shadow-sm"
+              >
+                {lang === 'ar' ? 'عرض المزيد من الأصناف' : 'View More Items'}
+                <ChevronRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+          </section>
+
           {/* Neighborhoods Area Map Grid */}
           <section id="neighborhoods-section" className="bg-white py-12 border-t border-slate-200">
             <div className="max-w-7xl mx-auto px-4">
