@@ -55,6 +55,7 @@ export default function App() {
   const [copiedNumber, setCopiedNumber] = useState<boolean>(false);
   const [showImoModal, setShowImoModal] = useState<boolean>(false);
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   // Form states for instant WhatsApp valuation
   const [sellerName, setSellerName] = useState<string>('');
@@ -466,11 +467,15 @@ export default function App() {
               </div>
 
               {/* Cover Illustration & Local Mosque Minarets / Living Room Badge Collage */}
-              <div id="hero-graphic" className="lg:col-span-5 h-full min-h-[240px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl relative flex flex-col items-center justify-center text-slate-500 overflow-hidden border border-slate-200">
+              <div 
+                id="hero-graphic" 
+                className="lg:col-span-5 h-full min-h-[240px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl relative flex flex-col items-center justify-center text-slate-500 overflow-hidden border border-slate-200 cursor-pointer group"
+                onClick={() => setFullscreenImage("/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg")}
+              >
                 <img
                   src="/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
                   alt="Furniture Showroom Madinah"
-                  className="absolute inset-0 w-full h-full object-cover brightness-[0.95]"
+                  className="absolute inset-0 w-full h-full object-cover brightness-[0.95] group-hover:scale-105 transition-transform duration-500"
                   loading="eager"
                 />
 
@@ -825,7 +830,11 @@ export default function App() {
                     <img
                       src={PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                       alt={prod.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setFullscreenImage(PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
+                      }}
                     />
                     <div className="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-xs text-[9px] font-black text-amber-400 px-2.5 py-0.5 rounded-full">
                       {prod.condition}
@@ -906,7 +915,11 @@ export default function App() {
                 <img
                   src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80"
                   alt="Bedrooms"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFullscreenImage("https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80");
+                  }}
                 />
               </div>
               <div>
@@ -930,7 +943,11 @@ export default function App() {
                 <img
                   src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80"
                   alt="Sofas"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFullscreenImage("https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80");
+                  }}
                 />
               </div>
               <div>
@@ -954,7 +971,11 @@ export default function App() {
                 <img
                   src="https://images.unsplash.com/photo-1621905252507-b354bc25edac?auto=format&fit=crop&w=400&q=80"
                   alt="Electronics"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFullscreenImage("https://images.unsplash.com/photo-1621905252507-b354bc25edac?auto=format&fit=crop&w=400&q=80");
+                  }}
                 />
               </div>
               <div>
@@ -978,7 +999,11 @@ export default function App() {
                 <img
                   src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=400&q=80"
                   alt="Kitchens"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFullscreenImage("https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=400&q=80");
+                  }}
                 />
               </div>
               <div>
@@ -1469,7 +1494,11 @@ export default function App() {
               <img
                 src={PRODUCT_IMAGES[selectedProduct.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                 alt={selectedProduct.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setFullscreenImage(PRODUCT_IMAGES[selectedProduct.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
+                }}
               />
               <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-xs text-xs font-black text-amber-400 px-3 py-1 rounded-full">
                 {translations.productsSection.conditionLabel} {selectedProduct.condition}
@@ -1531,6 +1560,28 @@ export default function App() {
             </div>
 
           </div>
+        </div>
+      )}
+
+      {/* Fullscreen Image Viewer Modal */}
+      {fullscreenImage && (
+        <div 
+          className="fixed inset-0 bg-slate-950/95 z-[100] flex items-center justify-center p-4 sm:p-8 backdrop-blur-sm cursor-zoom-out transition-all duration-300"
+          onClick={() => setFullscreenImage(null)}
+        >
+          <button 
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white transition-all border border-white/20"
+            onClick={(e) => { e.stopPropagation(); setFullscreenImage(null); }}
+            aria-label="Close fullscreen image"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <img 
+            src={fullscreenImage} 
+            alt="Fullscreen View" 
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-100 cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
 
