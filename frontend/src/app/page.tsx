@@ -33,13 +33,14 @@ import arData from '../data/home-arabic.json';
 
 // Unsplash high-quality responsive CDN images for static product view
 const PRODUCT_IMAGES: Record<string, string> = {
-  "/assets/cooking_range.png": "/assets/cooking_range.png",
-  "/assets/air_conditioner.png": "/assets/air_conditioner.png",
-  "/assets/refrigerator.png": "/assets/refrigerator.png",
-  "/assets/sofa_set.png": "/assets/sofa_set.png",
-  "/assets/bedroom_set.png": "/assets/bedroom_set.png",
-  "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg": "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg",
-  "/assets/washing_machine.png": "/assets/washing_machine.png"
+  "/assets/bedroom_set.png": "/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg",
+  "/assets/air_conditioner.png": "/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg",
+  "/assets/refrigerator.png": "/madina/buy-furniture-from-madinah-590130a6-34a7-4885-a97f-bd7679a45b34.jpeg",
+  "/assets/sofa_set.png": "/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg",
+  "/assets/kitchen_cabinets.png": "/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg",
+  "/assets/washing_machine.png": "/madina/buy-furniture-from-madinah-e5c1ea3b-32ae-45e8-a6aa-27acd4d5381a.jpeg",
+  "/assets/cooking_range.png": "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg",
+  "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg": "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
 };
 
 export default function App() {
@@ -913,12 +914,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <img
-                  src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80"
+                  src="/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg"
                   alt="Bedrooms"
                   className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80");
+                    setFullscreenImage("/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg");
                   }}
                 />
               </div>
@@ -941,12 +942,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <img
-                  src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80"
+                  src="/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg"
                   alt="Sofas"
                   className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80");
+                    setFullscreenImage("/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg");
                   }}
                 />
               </div>
@@ -969,12 +970,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <img
-                  src="https://images.unsplash.com/photo-1621905252507-b354bc25edac?auto=format&fit=crop&w=400&q=80"
+                  src="/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg"
                   alt="Electronics"
                   className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("https://images.unsplash.com/photo-1621905252507-b354bc25edac?auto=format&fit=crop&w=400&q=80");
+                    setFullscreenImage("/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg");
                   }}
                 />
               </div>
@@ -997,12 +998,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <img
-                  src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=400&q=80"
+                  src="/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg"
                   alt="Kitchens"
                   className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=400&q=80");
+                    setFullscreenImage("/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg");
                   }}
                 />
               </div>
