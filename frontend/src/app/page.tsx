@@ -6,6 +6,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   Phone,
   MessageSquare,
@@ -196,7 +197,7 @@ export default function App() {
           <p className="text-white text-lg font-bold tracking-wide animate-pulse text-center max-w-md">
             {loadingMsg}
           </p>
-          <span className="text-xs text-slate-400 mt-2 tracking-widest uppercase">
+          <span className="text-xs text-slate-500 mt-2 tracking-widest uppercase">
             https://usedfurniturebuyermadinah.com
           </span>
         </div>
@@ -309,14 +310,14 @@ export default function App() {
               <button
                 id="lang-ar-btn"
                 onClick={() => toggleLanguage('ar')}
-                className={`px-2.5 py-1 text-xs font-extrabold rounded-md transition-all ${lang === 'ar' ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-500 hover:text-slate-800'}`}
+                className={`px-2.5 py-1 text-xs font-extrabold rounded-md transition-all ${lang === 'ar' ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 عربي
               </button>
               <button
                 id="lang-en-btn"
                 onClick={() => toggleLanguage('en')}
-                className={`px-2.5 py-1 text-xs font-extrabold rounded-md transition-all ${lang === 'en' ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-500 hover:text-slate-800'}`}
+                className={`px-2.5 py-1 text-xs font-extrabold rounded-md transition-all ${lang === 'en' ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 EN
               </button>
@@ -432,7 +433,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-50 -z-10"></div>
 
-              <div className="lg:col-span-7 flex flex-col items-start text-start">
+              <div className="lg:col-span-7 flex flex-col items-start text-start min-h-[320px] justify-center">
                 <span id="hero-badge" className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full mb-4 uppercase tracking-wider border border-blue-100">
                   <Sparkles className="w-3 h-3 text-blue-600 animate-spin" />
                   {translations.hero.badge}
@@ -481,7 +482,7 @@ export default function App() {
                   {translations.hero.stats.map((stat, idx) => (
                     <div key={idx} className="bg-slate-50 p-3 rounded-xl border border-slate-150 flex flex-col justify-center text-center">
                       <span className="text-lg sm:text-xl font-black text-blue-600">{stat.value}</span>
-                      <span className="text-[10px] sm:text-xs text-slate-500 font-bold">{stat.label}</span>
+                      <span className="text-[10px] sm:text-xs text-slate-600 font-bold">{stat.label}</span>
                     </div>
                   ))}
                 </div>
@@ -490,15 +491,15 @@ export default function App() {
               {/* Cover Illustration & Local Mosque Minarets / Living Room Badge Collage */}
               <div 
                 id="hero-graphic" 
-                className="lg:col-span-5 h-full min-h-[240px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl relative flex flex-col items-center justify-center text-slate-500 overflow-hidden border border-slate-200 cursor-pointer group"
+                className="lg:col-span-5 h-full min-h-[240px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl relative flex flex-col items-center justify-center text-slate-600 overflow-hidden border border-slate-200 cursor-pointer group"
                 onClick={() => setFullscreenImage("/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg")}
               >
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
                   alt="Furniture Showroom Madinah"
-                  className="absolute inset-0 w-full h-full object-cover brightness-[0.95] group-hover:scale-105 transition-transform duration-500"
-                  loading="eager"
-                />
+                  className="absolute inset-0  w-full h-full  object-cover brightness-[0.95] group-hover:scale-105 transition-transform duration-500"
+                  priority={true}
+                 />
 
                 {/* Visual Label overlay */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent p-4 flex flex-col text-white">
@@ -528,7 +529,7 @@ export default function App() {
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
                   {translations.categories.title}
                 </h3>
-                <p className="text-sm text-slate-500 mt-1.5">
+                <p className="text-sm text-slate-600 mt-1.5">
                   {translations.categories.subtitle}
                 </p>
               </div>
@@ -548,9 +549,9 @@ export default function App() {
                     </div>
                     <h4 className="font-bold text-base text-slate-900 mb-1 flex items-center gap-2">
                       {cat.name}
-                      <ChevronRight className={`w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-all ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                      <ChevronRight className={`w-4 h-4 text-slate-500 group-hover:text-blue-600 transition-all ${lang === 'ar' ? 'rotate-180' : ''}`} />
                     </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
                       {cat.desc}
                     </p>
                   </div>
@@ -601,7 +602,7 @@ export default function App() {
                   <div className="mt-8 pt-6 border-t border-slate-800 flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
                     <div>
-                      <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-bold">
+                      <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-bold">
                         {lang === 'ar' ? 'عنوان مقرنا الرئيسي للمعاينة:' : 'Our main physical location:'}
                       </span>
                       <p className="text-xs font-bold text-slate-100 leading-normal">
@@ -685,7 +686,7 @@ export default function App() {
                     <ChevronRight className={`w-4 h-4 text-white shrink-0 transition-transform group-hover:translate-x-1 ${lang === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
                   </a>
 
-                  <p className="text-[10px] text-slate-400 text-center leading-relaxed mt-2 font-normal">
+                  <p className="text-[10px] text-slate-500 text-center leading-relaxed mt-2 font-normal">
                     {lang === 'ar'
                       ? 'جميع القنوات نشطة ومتاحة ٢٤ ساعة طوال أيام الأسبوع لخدمتك بالمدينة المنورة'
                       : 'All channels are active 24/7 for your direct assistance inside the holy city of Madinah.'}
@@ -706,7 +707,7 @@ export default function App() {
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
                   {translations.howItWorks.title}
                 </h3>
-                <p className="text-sm text-slate-500 mt-1.5">
+                <p className="text-sm text-slate-600 mt-1.5">
                   {translations.howItWorks.subtitle}
                 </p>
               </div>
@@ -720,7 +721,7 @@ export default function App() {
                     <h4 className="font-extrabold text-base mb-2 text-slate-800 pt-6 pr-6">
                       {step.title}
                     </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
                       {step.description}
                     </p>
                   </div>
@@ -743,10 +744,10 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="hidden sm:flex gap-1.5" dir="ltr">
-                    <button onClick={() => scrollCarousel(servicesCarouselRef, 'left')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                    <button aria-label="Previous item" onClick={() => scrollCarousel(servicesCarouselRef, 'left')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
                       <ChevronLeft className="w-5 h-5" />
                     </button>
-                    <button onClick={() => scrollCarousel(servicesCarouselRef, 'right')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                    <button aria-label="Next item" onClick={() => scrollCarousel(servicesCarouselRef, 'right')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </div>
@@ -769,20 +770,20 @@ export default function App() {
                     onClick={() => triggerSimulatedReload('services')}
                   >
                     <div className="aspect-video bg-slate-100 rounded-lg mb-4 overflow-hidden relative border border-slate-100">
-                      <img
+                      <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                         src={serviceImages[idx % serviceImages.length]}
                         alt={cat.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className=" w-full h-full  object-cover hover:scale-105 transition-transform duration-500"
                         onClick={(e) => {
                           e.stopPropagation();
                           setFullscreenImage(serviceImages[idx % serviceImages.length]);
                         }}
-                      />
+                       />
                     </div>
                     <h4 className="font-extrabold text-slate-900 text-sm mb-1.5 line-clamp-1">
                       {cat.name}
                     </h4>
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-3 flex-1">
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3 flex-1">
                       {cat.desc}
                     </p>
                   </div>
@@ -813,10 +814,10 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="hidden sm:flex gap-1.5" dir="ltr">
-                    <button onClick={() => scrollCarousel(productsCarouselRef, 'left')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                    <button aria-label="Previous item" onClick={() => scrollCarousel(productsCarouselRef, 'left')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
                       <ChevronLeft className="w-5 h-5" />
                     </button>
-                    <button onClick={() => scrollCarousel(productsCarouselRef, 'right')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                    <button aria-label="Next item" onClick={() => scrollCarousel(productsCarouselRef, 'right')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </div>
@@ -842,15 +843,15 @@ export default function App() {
                     }}
                   >
                     <div className="aspect-video bg-slate-100 rounded-lg mb-4 overflow-hidden relative border border-slate-100">
-                      <img
+                      <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                         src={PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                         alt={prod.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className=" w-full h-full  object-cover group-hover:scale-105 transition-transform duration-500"
                         onClick={(e) => {
                           e.stopPropagation();
                           setFullscreenImage(PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
                         }}
-                      />
+                       />
                       <div className="absolute top-2 right-2 bg-slate-900/80 backdrop-blur-xs text-[10px] font-black text-white px-2 py-1 rounded-md">
                         {prod.category}
                       </div>
@@ -858,11 +859,11 @@ export default function App() {
                     <h4 className="font-extrabold text-slate-900 text-sm mb-1.5 line-clamp-1">
                       {prod.title}
                     </h4>
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-3 flex-1">
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3 flex-1">
                       {prod.desc}
                     </p>
                     <div className="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
-                      <span className="text-[10px] font-bold text-slate-400 truncate max-w-[50%]">
+                      <span className="text-[10px] font-bold text-slate-500 truncate max-w-[50%]">
                         {prod.condition}
                       </span>
                       <span className="text-xs font-black text-blue-600 truncate max-w-[50%] text-end">
@@ -968,7 +969,7 @@ export default function App() {
                 <Grid className="w-6 h-6 text-blue-600" />
                 {translations.productsSection.title}
               </h2>
-              <p className="text-sm text-slate-500 mt-1">
+              <p className="text-sm text-slate-600 mt-1">
                 {translations.productsSection.subtitle}
               </p>
             </div>
@@ -1003,15 +1004,15 @@ export default function App() {
               >
                 <div>
                   <div className="aspect-video bg-slate-100 rounded-lg mb-3 relative overflow-hidden border border-slate-150">
-                    <img
+                    <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                       src={PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                       alt={prod.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      className=" w-full h-full  object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
                       onClick={(e) => {
                         e.stopPropagation();
                         setFullscreenImage(PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
                       }}
-                    />
+                     />
                     <div className="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-xs text-[9px] font-black text-amber-400 px-2.5 py-0.5 rounded-full">
                       {prod.condition}
                     </div>
@@ -1023,18 +1024,18 @@ export default function App() {
                     </h3>
                   </div>
 
-                  <p className="text-[11px] text-slate-400 mt-0.5">
+                  <p className="text-[11px] text-slate-500 mt-0.5">
                     {prod.specs}
                   </p>
 
-                  <p className="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
                     {prod.desc}
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span className="text-[9px] text-slate-400 uppercase tracking-wider block font-bold">
+                    <span className="text-[9px] text-slate-500 uppercase tracking-wider block font-bold">
                       {translations.productsSection.priceLabel}
                     </span>
                     <span className="text-blue-600 font-black text-base">
@@ -1076,7 +1077,7 @@ export default function App() {
             <h2 className="text-3xl font-black text-slate-900">
               {lang === 'ar' ? 'الأثاث والأجهزة التي نقوم بشرائها وتداولها' : 'Items We Purchase at Premium Value'}
             </h2>
-            <p className="text-sm text-slate-500 mt-1">
+            <p className="text-sm text-slate-600 mt-1">
               {lang === 'ar'
                 ? 'نحن متخصصون في تداول كافة الأثاث المنزلي والديكور الخشبي والمعدني والأجهزة المنزلية الحديثة بالمدينة المنورة.'
                 : 'We buy and dismantle residential and corporate inventory with top value guarantee in Madinah.'}
@@ -1088,21 +1089,21 @@ export default function App() {
             {/* Service card 1 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg"
                   alt="Bedrooms"
-                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
                     setFullscreenImage("/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg");
                   }}
-                />
+                 />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
                   {lang === 'ar' ? 'شراء غرف النوم والدواليب الخشبية' : 'Complete Bedrooms & Wardrobes'}
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-normal mb-3">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal mb-3">
                   {lang === 'ar'
                     ? 'نشتري غرف نوم ايكيا، غرف النوم الكلاسيك والتركي والصيني، المراتب الطبية، ودواليب الملابس بكافة مقاساتها. نجارونا المحترفون يقومون بالفك والتحميل السريع.'
                     : 'We purchase Ikea, Turkish, Classic & Chinese bedrooms including wardrobes, medical mattresses, and vanity drawers. Carpentry disassembly is on us.'}
@@ -1116,21 +1117,21 @@ export default function App() {
             {/* Service card 2 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg"
                   alt="Sofas"
-                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
                     setFullscreenImage("/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg");
                   }}
-                />
+                 />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
                   {lang === 'ar' ? 'شراء لو كنب، مجالس انتريه وصالونات' : 'Living Rooms, Sofas & Majlis'}
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-normal mb-3">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal mb-3">
                   {lang === 'ar'
                     ? 'نشتري الكنب الفاخر، صالونات الجلوس الكلاسيك والمودرن، أطقم المجالس العربية الأرضية والمرتفعة، السجاد النظيف والستائر والطاولات المتناسقة.'
                     : 'We buy high-end sofas, L-shapes corners, modern salon couches, full classical Arabic sitting arrangements, clean carpets, and coffee tables.'}
@@ -1144,21 +1145,21 @@ export default function App() {
             {/* Service card 3 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg"
                   alt="Electronics"
-                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
                     setFullscreenImage("/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg");
                   }}
-                />
+                 />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
                   {lang === 'ar' ? 'شراء كافة الأجهزة الكهربائية المنزلية' : 'Electronics & Appliances'}
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-normal mb-3">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal mb-3">
                   {lang === 'ar'
                     ? 'شراء ثلاجات مستعملة بكافة المقاسات، غسالات حوضين وتوماتيك كامل، أفران غاز ذات ٤ و ٥ عيون، مكيفات سبليت وشباك تبريد متميز، شاشات وجاشات تلفاز.'
                     : 'We pay top value for double door refrigerators, washers, dryers, cooking ranges, window/split AC units, LED screens, and other home goods.'}
@@ -1172,21 +1173,21 @@ export default function App() {
             {/* Service card 4 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg"
                   alt="Kitchens"
-                  className="w-full h-full object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
+                  className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
                     setFullscreenImage("/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg");
                   }}
-                />
+                 />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
                   {lang === 'ar' ? 'شراء وفك المطابخ المستعملة ألمنيوم وخشب' : 'Kitchen Cabinets & Fittings'}
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-normal mb-3">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal mb-3">
                   {lang === 'ar'
                     ? 'نشتري المطابخ الألمنيوم، كاونترات ستانلس ستيل، مطابخ خشبية فاخرة. نقوم بالفك والتحميل المجاني وإعادة التدوير بأسعار عادلة.'
                     : 'We buy custom commercial and residential aluminium kitchens, modular cabinetry sets, and countertops with premium prices paid.'}
@@ -1225,7 +1226,7 @@ export default function App() {
             <h2 className="text-3xl font-black text-slate-900">
               {translations.howItWorks.title}
             </h2>
-            <p className="text-sm text-slate-500 mt-1">
+            <p className="text-sm text-slate-600 mt-1">
               {translations.howItWorks.subtitle}
             </p>
           </div>
@@ -1265,7 +1266,7 @@ export default function App() {
                 <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-sm text-slate-900">{lang === 'ar' ? 'لا توجد خصومات مخفية' : 'Zero Transport Deductions'}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed mt-0.5">
+                  <p className="text-xs text-slate-600 leading-relaxed mt-0.5">
                     {lang === 'ar' ? 'السعر المتفق عليه هو السعر الفعلي الذي سنقوم بتسليمه لك. لا نخصم رسوم سيارات نقل أو فك دواليب.' : 'The price agreed over WhatsApp is what we hand you in physical bills. No loading, driving, or helper fees are ever subtracted.'}
                   </p>
                 </div>
@@ -1274,7 +1275,7 @@ export default function App() {
                 <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-sm text-slate-900">{lang === 'ar' ? 'أمان وسرية تامة لمعلوماتك' : 'Secure & Confidential Handling'}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed mt-0.5">
+                  <p className="text-xs text-slate-600 leading-relaxed mt-0.5">
                     {lang === 'ar' ? 'نحترم خصوصية منزلك وعائلتك. عمالنا يتميزون بالأمانة والأخلاق ومستوى مهني رفيع يليق بالمدينة المنورة.' : 'We operate with ultimate respect for your domestic privacy. Our moving crew values clear, safe, and moral code of conduct inside residences.'}
                   </p>
                 </div>
@@ -1296,7 +1297,7 @@ export default function App() {
             <h2 className="text-3xl font-black text-slate-900">
               {lang === 'ar' ? 'الموقع والمعلومات وبيانات التواصل الرسمية' : 'Contact Information & Communication Hub'}
             </h2>
-            <p className="text-sm text-slate-500 mt-1">
+            <p className="text-sm text-slate-600 mt-1">
               {translations.contact.subtitle}
             </p>
           </div>
@@ -1311,13 +1312,13 @@ export default function App() {
                   <Phone className="w-5 h-5 text-blue-700" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block">
+                  <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider block">
                     {translations.contact.phoneLabel}
                   </span>
                   <a href="tel:0579068424" className="text-lg font-black text-slate-800 hover:text-blue-600 transition-colors">
                     0579068424
                   </a>
-                  <p className="text-[11px] text-slate-400 mt-1">
+                  <p className="text-[11px] text-slate-500 mt-1">
                     {lang === 'ar' ? 'اتصال مباشر أو مكالمة خلوية عادية' : 'Voice call available directly on local phone network'}
                   </p>
                 </div>
@@ -1328,7 +1329,7 @@ export default function App() {
                   <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block">
+                  <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider block">
                     WhatsApp Chat
                   </span>
                   <a
@@ -1339,7 +1340,7 @@ export default function App() {
                   >
                     0579068424
                   </a>
-                  <p className="text-[11px] text-slate-400 mt-1">
+                  <p className="text-[11px] text-slate-500 mt-1">
                     {lang === 'ar' ? 'متصلون دائماً أرسل الصور هنا للحصول على عرض فوري' : 'Our main online channel. Photo submissions must go here.'}
                   </p>
                 </div>
@@ -1350,7 +1351,7 @@ export default function App() {
                   <Mail className="w-5 h-5 text-indigo-700" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block">
+                  <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider block">
                     {translations.contact.emailLabel}
                   </span>
                   <span className="text-sm font-bold text-slate-800 block">
@@ -1367,7 +1368,7 @@ export default function App() {
                   <MapPin className="w-5 h-5 text-orange-700" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider block">
+                  <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider block">
                     {translations.contact.locationLabel}
                   </span>
                   <span className="text-xs font-bold text-slate-800 leading-normal block">
@@ -1383,7 +1384,7 @@ export default function App() {
               <h3 className="font-extrabold text-base sm:text-lg mb-2 text-slate-800 text-start">
                 {lang === 'ar' ? 'ساعات المعاينة وجدولة مواعيد النقل بالموقع' : 'Instant Dispatch & Schedule Request'}
               </h3>
-              <p className="text-xs text-slate-500 mb-6 leading-relaxed text-start font-normal">
+              <p className="text-xs text-slate-600 mb-6 leading-relaxed text-start font-normal">
                 {lang === 'ar'
                   ? 'بمجرد الاتفاق هاتفياً على السعر المبدئي للأثاث أو كاش الأجهزة، نرسل سيارة النقل ومعها النجارون لتجهيز كاش المال والفك فوراً. تتوفر لدينا خدمة المعاينة في نفس اليوم.'
                   : 'As soon as a preliminary price range is proposed via digital channels, a dispatch truck is assigned to handle packaging. Dismantling carpenters arrive to assist on same-day service.'}
@@ -1473,14 +1474,14 @@ export default function App() {
                   {translations.companyName}
                 </h4>
               </div>
-              <p className="text-xs text-slate-400 leading-normal font-normal">
+              <p className="text-xs text-slate-500 leading-normal font-normal">
                 {lang === 'ar'
                   ? 'نعطي أفضل وأعلى الأسعار لشراء الأثاث المنزلي الفاخر، غرف النوم، الصالونات، المجالس العربية العريضة والمكيفات المستعملة بالمدينة المنورة.'
                   : 'The holy city of Madinah\'s leading used furniture & electronic buyer agency. High cash estimations, immediate transport, free carpenters.'}
               </p>
 
               {/* Trust certification line */}
-              <div className="flex items-center gap-1.5 mt-2 text-[10px] text-slate-500 font-bold">
+              <div className="flex items-center gap-1.5 mt-2 text-[10px] text-slate-600 font-bold">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-500" />
                 <span>{lang === 'ar' ? 'موثوق ومعتمد بالمدينة المنورة' : 'Licensed & Trusted Used Goods Dealer'}</span>
               </div>
@@ -1494,31 +1495,31 @@ export default function App() {
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-bold">
                 <button
                   onClick={() => triggerSimulatedReload('home')}
-                  className="text-slate-400 hover:text-white text-start transition-colors"
+                  className="text-slate-500 hover:text-white text-start transition-colors"
                 >
                   {translations.nav.home}
                 </button>
                 <button
                   onClick={() => triggerSimulatedReload('services')}
-                  className="text-slate-400 hover:text-white text-start transition-colors"
+                  className="text-slate-500 hover:text-white text-start transition-colors"
                 >
                   {translations.nav.services}
                 </button>
                 <button
                   onClick={() => triggerSimulatedReload('how-it-works')}
-                  className="text-slate-400 hover:text-white text-start transition-colors"
+                  className="text-slate-500 hover:text-white text-start transition-colors"
                 >
                   {translations.nav.howItWorks}
                 </button>
                 <button
                   onClick={() => triggerSimulatedReload('products')}
-                  className="text-slate-400 hover:text-white text-start transition-colors"
+                  className="text-slate-500 hover:text-white text-start transition-colors"
                 >
                   {translations.nav.products}
                 </button>
                 <button
                   onClick={() => triggerSimulatedReload('contact')}
-                  className="text-slate-400 hover:text-white text-start transition-colors"
+                  className="text-slate-500 hover:text-white text-start transition-colors"
                 >
                   {translations.nav.contact}
                 </button>
@@ -1566,14 +1567,14 @@ export default function App() {
           </div>
 
           <div className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <span className="text-[10px] text-slate-500 font-bold tracking-wider text-center sm:text-start leading-normal">
+            <span className="text-[10px] text-slate-600 font-bold tracking-wider text-center sm:text-start leading-normal">
               © 2026 USED FURNITURE BUYER MADINAH. ALL RIGHTS RESERVED.<br />
               {lang === 'ar'
                 ? 'موقع شراء الأثاث المستعمل بالمدينة المنورة للتجارة وإعادة التدوير • هاتف 0579068424'
                 : 'Secondhand items trade registry under Sabujhasan465@gmail.com. Serving Madina Holy District.'}
             </span>
 
-            <span className="text-[10px] text-slate-500 bg-slate-800/50 px-2.5 py-1 rounded-full font-sans">
+            <span className="text-[10px] text-slate-600 bg-slate-800/50 px-2.5 py-1 rounded-full font-sans">
               https://usedfurniturebuyermadinah.com
             </span>
           </div>
@@ -1603,7 +1604,7 @@ export default function App() {
                 {lang === 'ar' ? 'تواصل معنا عبر تطبيق إيمو (IMO)' : 'Contact via IMO Messenger'}
               </h3>
 
-              <p className="text-xs text-slate-500 leading-relaxed mt-2 max-w-sm font-normal">
+              <p className="text-xs text-slate-600 leading-relaxed mt-2 max-w-sm font-normal">
                 {lang === 'ar'
                   ? 'لتسريع التواصل ومعاينة غرف النوم الصعبة أو المطابخ والأجهزة، يمكنك الاتصال بنا مباشرة على تطبيق إيمو باستخدام رقم الجوال التالي:'
                   : 'To clear bedroom layouts or appliances fast, connect directly with our evaluators on the IMO messenger app by utilizing our number below:'}
@@ -1667,15 +1668,15 @@ export default function App() {
 
             {/* Modal Image display */}
             <div className="aspect-video relative overflow-hidden bg-slate-100 border-b border-slate-200">
-              <img
+              <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                 src={PRODUCT_IMAGES[selectedProduct.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                 alt={selectedProduct.title}
-                className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                className=" w-full h-full  object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
                 onClick={(e) => {
                   e.stopPropagation();
                   setFullscreenImage(PRODUCT_IMAGES[selectedProduct.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
                 }}
-              />
+               />
               <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-xs text-xs font-black text-amber-400 px-3 py-1 rounded-full">
                 {translations.productsSection.conditionLabel} {selectedProduct.condition}
               </div>
@@ -1697,7 +1698,7 @@ export default function App() {
 
               <div className="flex justify-between items-center py-3 border-t border-slate-100 mt-2 bg-slate-50/50 p-3 rounded-xl border border-dashed border-slate-200">
                 <div className="flex flex-col">
-                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wide">
                     {translations.productsSection.priceLabel}
                   </span>
                   <span className="text-blue-600 text-xl font-black">
@@ -1752,7 +1753,7 @@ export default function App() {
           >
             <X className="w-6 h-6" />
           </button>
-          <img 
+          <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
             src={fullscreenImage} 
             alt="Fullscreen View" 
             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-100 cursor-default"
