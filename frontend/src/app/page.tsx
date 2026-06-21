@@ -13,6 +13,7 @@ import {
   Clock,
   CheckCircle,
   ChevronRight,
+  ChevronLeft,
   Menu,
   X,
   ExternalLink,
@@ -57,6 +58,25 @@ export default function App() {
   const [showImoModal, setShowImoModal] = useState<boolean>(false);
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+
+  const servicesCarouselRef = React.useRef<HTMLDivElement>(null);
+  const productsCarouselRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
+    if (ref.current) {
+      // Find exact scroll width of one card based on container view width
+      // Instead of guessing, we use the clientWidth and scroll visually
+      const scrollAmount = direction === 'left' ? -ref.current.clientWidth : ref.current.clientWidth;
+      ref.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const serviceImages = [
+    "/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg",
+    "/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg",
+    "/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg",
+    "/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg",
+  ];
 
   // Form states for instant WhatsApp valuation
   const [sellerName, setSellerName] = useState<string>('');
@@ -709,29 +729,109 @@ export default function App() {
             </div>
           </section>
 
-          {/* Recent Items & Services Carousel */}
-          <section id="home-carousel-section" className="bg-slate-50 py-12 border-t border-slate-200 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4">
+          {/* Services Carousel */}
+          <section id="home-services-carousel" className="bg-slate-50 py-12 border-t border-slate-200 overflow-hidden relative">
+            <div className="max-w-7xl mx-auto px-4 relative">
+              <div className="flex justify-between items-end mb-8">
+                <div>
+                  <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
+                    {lang === 'ar' ? 'خدماتنا المتميزة' : 'Core Services'}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+                    {lang === 'ar' ? 'أهم الخدمات المتاحة' : 'Our Services'}
+                  </h3>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="hidden sm:flex gap-1.5" dir="ltr">
+                    <button onClick={() => scrollCarousel(servicesCarouselRef, 'left')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button onClick={() => scrollCarousel(servicesCarouselRef, 'right')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => triggerSimulatedReload('services')}
+                    className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 px-5 py-2.5 rounded-xl transition-all shadow-sm"
+                  >
+                    {lang === 'ar' ? 'عرض الخدمات' : 'View Services'}
+                    <ChevronRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Slider Container */}
+              <div ref={servicesCarouselRef} className="flex overflow-x-auto gap-5 snap-x snap-mandatory pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {translations.categories.list.map((cat: any, idx: number) => (
+                  <div 
+                    key={cat.id} 
+                    className="w-[85vw] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] shrink-0 snap-start bg-white p-4 border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col cursor-pointer"
+                    onClick={() => triggerSimulatedReload('services')}
+                  >
+                    <div className="aspect-video bg-slate-100 rounded-lg mb-4 overflow-hidden relative border border-slate-100">
+                      <img
+                        src={serviceImages[idx % serviceImages.length]}
+                        alt={cat.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setFullscreenImage(serviceImages[idx % serviceImages.length]);
+                        }}
+                      />
+                    </div>
+                    <h4 className="font-extrabold text-slate-900 text-sm mb-1.5 line-clamp-1">
+                      {cat.name}
+                    </h4>
+                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-3 flex-1">
+                      {cat.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={() => triggerSimulatedReload('services')}
+                className="w-full sm:hidden mt-2 flex items-center justify-center gap-1.5 text-sm font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 px-5 py-3.5 rounded-xl transition-all shadow-sm"
+              >
+                {lang === 'ar' ? 'جميع الخدمات' : 'All Services'}
+                <ChevronRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+          </section>
+
+          {/* Items/Products Carousel */}
+          <section id="home-products-carousel" className="bg-white py-12 border-t border-slate-200 overflow-hidden relative">
+            <div className="max-w-7xl mx-auto px-4 relative">
               <div className="flex justify-between items-end mb-8">
                 <div>
                   <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
                     {lang === 'ar' ? 'أحدث المشتريات' : 'Recent Inventory'}
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
-                    {lang === 'ar' ? 'نماذج لخدماتنا ومشترياتنا' : 'Services & Items Demo'}
+                    {lang === 'ar' ? 'الأصناف والمقتنيات' : 'Our Items'}
                   </h3>
                 </div>
-                <button
-                  onClick={() => triggerSimulatedReload('products')}
-                  className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 px-5 py-2.5 rounded-xl transition-all shadow-sm"
-                >
-                  {lang === 'ar' ? 'عرض المزيد' : 'View More'}
-                  <ChevronRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
-                </button>
+                <div className="flex items-center gap-3">
+                  <div className="hidden sm:flex gap-1.5" dir="ltr">
+                    <button onClick={() => scrollCarousel(productsCarouselRef, 'left')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button onClick={() => scrollCarousel(productsCarouselRef, 'right')} className="p-2 rounded-full border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-colors">
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => triggerSimulatedReload('products')}
+                    className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 px-5 py-2.5 rounded-xl transition-all shadow-sm"
+                  >
+                    {lang === 'ar' ? 'عرض الأصناف' : 'View Items'}
+                    <ChevronRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
               </div>
 
               {/* Slider Container */}
-              <div className="flex overflow-x-auto gap-5 snap-x snap-mandatory pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <div ref={productsCarouselRef} className="flex overflow-x-auto gap-5 snap-x snap-mandatory pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                 {translations.products.map((prod: any) => (
                   <div 
                     key={prod.id} 
@@ -746,6 +846,10 @@ export default function App() {
                         src={PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                         alt={prod.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setFullscreenImage(PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
+                        }}
                       />
                       <div className="absolute top-2 right-2 bg-slate-900/80 backdrop-blur-xs text-[10px] font-black text-white px-2 py-1 rounded-md">
                         {prod.category}
@@ -774,7 +878,7 @@ export default function App() {
                 onClick={() => triggerSimulatedReload('products')}
                 className="w-full sm:hidden mt-2 flex items-center justify-center gap-1.5 text-sm font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 px-5 py-3.5 rounded-xl transition-all shadow-sm"
               >
-                {lang === 'ar' ? 'عرض المزيد من الأصناف' : 'View More Items'}
+                {lang === 'ar' ? 'جميع الأصناف' : 'All Items'}
                 <ChevronRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
               </button>
             </div>
