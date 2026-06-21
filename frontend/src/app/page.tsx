@@ -33,13 +33,13 @@ import arData from '../data/home-arabic.json';
 
 // Unsplash high-quality responsive CDN images for static product view
 const PRODUCT_IMAGES: Record<string, string> = {
-  "/assets/cooking_range.png": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=600&q=80",
-  "/assets/air_conditioner.png": "https://images.unsplash.com/photo-1621905252507-b354bc25edac?auto=format&fit=crop&w=600&q=80",
-  "/assets/refrigerator.png": "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=600&q=80",
-  "/assets/sofa_set.png": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=600&q=80",
-  "/assets/bedroom_set.png": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80",
-  "/public/madinah/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg": "/public/madinah/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg",
-  "/assets/washing_machine.png": "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80"
+  "/assets/cooking_range.png": "/assets/cooking_range.png",
+  "/assets/air_conditioner.png": "/assets/air_conditioner.png",
+  "/assets/refrigerator.png": "/assets/refrigerator.png",
+  "/assets/sofa_set.png": "/assets/sofa_set.png",
+  "/assets/bedroom_set.png": "/assets/bedroom_set.png",
+  "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg": "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg",
+  "/assets/washing_machine.png": "/assets/washing_machine.png"
 };
 
 export default function App() {
@@ -468,7 +468,7 @@ export default function App() {
               {/* Cover Illustration & Local Mosque Minarets / Living Room Badge Collage */}
               <div id="hero-graphic" className="lg:col-span-5 h-full min-h-[240px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl relative flex flex-col items-center justify-center text-slate-500 overflow-hidden border border-slate-200">
                 <img
-                  src="/public/madinah/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
+                  src="/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
                   alt="Furniture Showroom Madinah"
                   className="absolute inset-0 w-full h-full object-cover brightness-[0.95]"
                   loading="eager"
