@@ -45,6 +45,25 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg": "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
 };
 
+
+// Client-side obfuscated email components to prevent Cloudflare email-decode.min.js injection
+const ProtectedEmail = ({ className = '' }: { className?: string }) => {
+  const [email, setEmail] = useState<string | null>(null);
+  useEffect(() => {
+    setEmail(['Sabujhasan465', 'gmail.com'].join('@'));
+  }, []);
+  return email ? <span className={className}>{email}</span> : <span className="opacity-0 select-none">loading@...</span>;
+};
+
+const ProtectedEmailLink = ({ className = '', children }: { className?: string, children?: React.ReactNode }) => {
+  const [email, setEmail] = useState<string | null>(null);
+  useEffect(() => {
+    setEmail(['Sabujhasan465', 'gmail.com'].join('@'));
+  }, []);
+  if (!email) return <span className="opacity-0 select-none">loading...</span>;
+  return <a href={`mailto:${email}`} className={className}>{children || email}</a>;
+};
+
 export default function App() {
   // Translate & Direction states (default: Arabic)
   const [lang, setLang] = useState<'ar' | 'en'>('ar');
@@ -1357,9 +1376,9 @@ export default function App() {
                   <span className="text-sm font-bold text-slate-800 block">
                     Sabujhasan465@gmail.com
                   </span>
-                  <a href="mailto:Sabujhasan465@gmail.com" className="text-[11px] text-blue-600 hover:underline mt-1 block">
+                  <ProtectedEmailLink className="text-[11px] text-blue-600 hover:underline mt-1 block">
                     {translations.contact.emailClick} &rarr;
-                  </a>
+                  </ProtectedEmailLink>
                 </div>
               </div>
 
@@ -1533,7 +1552,7 @@ export default function App() {
               </h5>
               <p className="text-xs text-slate-300 text-start md:text-end font-normal">
                 {lang === 'ar' ? 'البريد الإلكتروني الموحد:' : 'Direct email enquiries:'}<br />
-                <span className="font-extrabold text-blue-400">Sabujhasan465@gmail.com</span>
+                <ProtectedEmail className="font-extrabold text-blue-400" />
               </p>
 
               {/* Responsive social block layout */}
@@ -1571,7 +1590,7 @@ export default function App() {
               © 2026 USED FURNITURE BUYER MADINAH. ALL RIGHTS RESERVED.<br />
               {lang === 'ar'
                 ? 'موقع شراء الأثاث المستعمل بالمدينة المنورة للتجارة وإعادة التدوير • هاتف 0579068424'
-                : 'Secondhand items trade registry under Sabujhasan465@gmail.com. Serving Madina Holy District.'}
+                : 'Secondhand items trade registry under <ProtectedEmail className="inline" />. Serving Madina Holy District.'}
             </span>
 
             <span className="text-[10px] text-slate-600 bg-slate-800/50 px-2.5 py-1 rounded-full font-sans">
