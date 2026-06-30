@@ -11,20 +11,19 @@ export const metadata: Metadata = {
     'شراء غرف نوم مستعملة',
     'used furniture buyer madinah',
     'buy used furniture',
-    'MD Sabuj Miah',
     'second hand furniture madina'
   ],
   authors: [
     { name: 'asifulmamun', url: 'https://asifulmamun.info.bd' }
   ],
   creator: 'asifulmamun',
-  publisher: 'MD Sabuj Miah Trading',
+  publisher: 'Used Furniture Buyer Madinah',
   metadataBase: new URL('https://usedfurniturebuyermadinah.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'شراء الاثاث المستعمل بالمدينة المنورة | MD Sabuj Miah',
+    title: 'شراء الاثاث المستعمل بالمدينة المنورة',
     description: 'نشتري الاثاث المستعمل بالمدينة المنورة بأفضل الأسعار. تقييم عادل ودفع كاش فوري، مع الفك والتحميل مجاناً.',
     url: 'https://usedfurniturebuyermadinah.com',
     siteName: 'شراء الاثاث المستعمل بالمدينة المنورة',

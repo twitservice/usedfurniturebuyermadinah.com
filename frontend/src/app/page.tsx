@@ -634,7 +634,7 @@ export default function App() {
                 {/* Right Interactive Action buttons (WhatsApp, IMO, Direct Phone) */}
                 <div className="lg:col-span-7 bg-white/5 backdrop-blur-xs p-5 sm:p-8 rounded-2xl border border-white/10 flex flex-col gap-4">
                   <h4 className="text-sm font-extrabold text-slate-200 mb-2 text-start">
-                    {lang === 'ar' ? 'انقر على أي خيار للتواصل الفوري السلس:' : 'Click any option to connect with MD Sabuj Miah instantly:'}
+                    {lang === 'ar' ? 'انقر على أي خيار للتواصل الفوري السلس:' : 'Click any option to connect instantly:'}
                   </h4>
 
                   {/* Channel 1: WhatsApp */}
@@ -882,11 +882,8 @@ export default function App() {
                       {prod.desc}
                     </p>
                     <div className="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
-                      <span className="text-[10px] font-bold text-slate-500 truncate max-w-[50%]">
+                      <span className="text-[10px] font-bold text-slate-500 truncate">
                         {prod.condition}
-                      </span>
-                      <span className="text-xs font-black text-blue-600 truncate max-w-[50%] text-end">
-                        {prod.price}
                       </span>
                     </div>
                   </div>
@@ -1052,17 +1049,7 @@ export default function App() {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-[9px] text-slate-500 uppercase tracking-wider block font-bold">
-                      {translations.productsSection.priceLabel}
-                    </span>
-                    <span className="text-blue-600 font-black text-base">
-                      {prod.price}
-                    </span>
-                  </div>
-
-                  <span className="text-xs font-black text-blue-600 bg-blue-50 py-1 px-3 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-end">                  <span className="text-xs font-black text-blue-600 bg-blue-50 py-1 px-3 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
                     {lang === 'ar' ? 'عرض تفاصيل' : 'View Details'}
                   </span>
                 </div>
@@ -1715,17 +1702,7 @@ export default function App() {
                 {selectedProduct.desc}
               </p>
 
-              <div className="flex justify-between items-center py-3 border-t border-slate-100 mt-2 bg-slate-50/50 p-3 rounded-xl border border-dashed border-slate-200">
-                <div className="flex flex-col">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wide">
-                    {translations.productsSection.priceLabel}
-                  </span>
-                  <span className="text-blue-600 text-xl font-black">
-                    {selectedProduct.price}
-                  </span>
-                </div>
-
-                <span className="text-[11px] text-emerald-600 font-black flex items-center gap-1">
+              <div className="flex justify-between items-center py-3 border-t border-slate-100 mt-2 bg-slate-50/50 p-3 rounded-xl border border-dashed border-slate-200">                <span className="text-[11px] text-emerald-600 font-black flex items-center gap-1">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>{lang === 'ar' ? 'فحص جودة وضمان' : 'Verified Quality'}</span>
                 </span>
@@ -1735,7 +1712,7 @@ export default function App() {
               <div className="grid grid-cols-2 gap-3 pt-3">
                 <a
                   id="modal-wa-ask-action"
-                  href={getWhatsAppLink(lang === 'ar' ? `مرحباً، أود الاستفسار عن توفر: ${selectedProduct.title} بسعر المعاينة ${selectedProduct.price}. هل هو متاح حالياً؟` : `Hello, I want to inquire about availability for: ${selectedProduct.title} listed at ${selectedProduct.price}.`)}
+                  href={getWhatsAppLink(lang === 'ar' ? `مرحباً، أود الاستفسار عن توفر: ${selectedProduct.title}. هل هو متاح حالياً؟` : `Hello, I want to inquire about availability for: ${selectedProduct.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-600 hover:bg-green-500 text-white p-3 rounded-lg text-xs font-black text-center flex items-center justify-center gap-1.5 transition-colors"

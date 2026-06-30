@@ -1,8 +1,8 @@
 {
   "dir": "ltr",
   "lang": "en",
-  "loadingText": "MD Sabuj Miah Trading - Updating contents and loading next sections...",
-  "companyName": "MD Sabuj Miah Secondhand Used Furniture Buying Est.",
+  "loadingText": "Updating contents and loading next sections...",
+  "companyName": "Secondhand Used Furniture Buying Est.",
   "companySlogan": "We Buy Your Secondhand Used Furniture & Electric Domestic Appliances at the Best Prices inside Madina",
   "nav": {
     "home": "Home",
@@ -28,7 +28,7 @@
     "title": "We Purchase Secondhand Furniture & Home Appliances",
     "highlight": "at the Highest Cash Payout Rates in Madinah!",
     "description": "Looking to upgrade your home or trade in heavy wood bedrooms, luxury sofas, GCC modular majlas, split & window ACs, double fridges, washing machines, or custom steel kitchens? We promise honest evaluation, instant hard cash before loading, and 100% free technical disassembly & truck towing!",
-    "ctaCall": "Call MD Sabuj Miah Directly Now",
+    "ctaCall": "Call Directly Now",
     "ctaWhatsapp": "Get Valuation Quote on WhatsApp",
     "stats": [
       {
@@ -95,7 +95,6 @@
   "productsSection": {
     "title": "Samples of Items We Recently Purchased in Madina",
     "subtitle": "Take a look at actual item photos and transaction price ranges we happily settled with our valued clients",
-    "priceLabel": "Estimated Purchase Price Range:",
     "conditionLabel": "Delivered Condition:",
     "askBtn": "WhatsApp to sell similar items",
     "callBtn": "Direct call for rapid appraisal"
@@ -108,8 +107,7 @@
       "title": "Classic Luxury Wood Bedroom Sets & Closets",
       "condition": "Excellent (Like New)",
       "specs": "Heavy structural beechwood • 6 to 8 Piece layout",
-      "desc": "Purchased from clean residential apartments in Madinah containing complete bed sizes, side drawers, mirror dresser vanity and 6-door storage closets.",
-      "price": "1,500 - 3,500 SAR"
+      "desc": "Purchased from clean residential apartments in Madinah containing complete bed sizes, side drawers, mirror dresser vanity and 6-door storage closets."
     },
     {
       "id": "prod2",
@@ -118,8 +116,7 @@
       "title": "Secondhand Split & Window AC units in Madina",
       "condition": "Very Clean & Working",
       "specs": "18,000 - 24,000 BTU • Carrier, LG, Gree & Beko brands",
-      "desc": "We buy functional and non-functional split and window air conditioners. We provide totally free unbolting, pipe unmounting, and transport.",
-      "price": "700 - 1,250 SAR / Unit"
+      "desc": "We buy functional and non-functional split and window air conditioners. We provide totally free unbolting, pipe unmounting, and transport."
     },
     {
       "id": "prod3",
@@ -128,8 +125,7 @@
       "title": "Double-Door Samsung & Toshiba Refrigerators",
       "condition": "Excellent compressor condition",
       "specs": "Multi Size • 14 to 22 Cubic Feet Frost Free models",
-      "desc": "Purchased refrigerator cooling units in premium running state. We evaluate the compressor and shelves honestly, paying higher than anyone.",
-      "price": "800 - 1,600 SAR"
+      "desc": "Purchased refrigerator cooling units in premium running state. We evaluate the compressor and shelves honestly, paying higher than anyone."
     },
     {
       "id": "prod4",
@@ -138,8 +134,7 @@
       "title": "Turkish Modern Living Rooms & Arabic Majlas",
       "condition": "Stain-Free & Sturdy Frame",
       "specs": "Complete assembly • Seats up to 12 persons with rugs",
-      "desc": "We buy high-end modular sofas, Turkish upholstery, floor pillows, rugs, and custom curtains. We pay premium quotes for clean fabrics & thick foams.",
-      "price": "1,200 - 3,000 SAR"
+      "desc": "We buy high-end modular sofas, Turkish upholstery, floor pillows, rugs, and custom curtains. We pay premium quotes for clean fabrics & thick foams."
     },
     {
       "id": "prod5",
@@ -148,8 +143,7 @@
       "title": "Ready-Made Aluminum Kitchen Cabinet Suites",
       "condition": "Stated modular configuration",
       "specs": "3 to 5 meter long with steel sink & countertop",
-      "desc": "Acquired sturdy and beautifully fitted modular aluminum/wood kitchens. Our wood carpenters handle clean de-installation without damaging walls.",
-      "price": "1,500 - 3,500 SAR"
+      "desc": "Acquired sturdy and beautifully fitted modular aluminum/wood kitchens. Our wood carpenters handle clean de-installation without damaging walls."
     },
     {
       "id": "prod6",
@@ -158,8 +152,7 @@
       "title": "Automatic & Semi Washing Drums & Tents",
       "condition": "Excellent structural condition",
       "specs": "7 to 12 KG loading size • Top & Front loaders",
-      "desc": "We seek out automatic washing cylinders, dryers, and commercial kitchen dishwashers. Quick and certified inspection with instant cash delivery.",
-      "price": "600 - 1,300 SAR"
+      "desc": "We seek out automatic washing cylinders, dryers, and commercial kitchen dishwashers. Quick and certified inspection with instant cash delivery."
     },
     {
       "id": "prod7",
@@ -168,8 +161,7 @@
       "title": "Premium Five-Burner Stainless Steel Ovens",
       "condition": "Fine cosmetic clean outlook",
       "specs": "Safety valves • Glemgas & Turkish high models",
-      "desc": "We obtain stainless steel stove tops, gas stoves, built-in ovens and microwave heating ovens. We estimate burner conditions fairly.",
-      "price": "500 - 1,200 SAR"
+      "desc": "We obtain stainless steel stove tops, gas stoves, built-in ovens and microwave heating ovens. We estimate burner conditions fairly."
     }
   ]
 }
