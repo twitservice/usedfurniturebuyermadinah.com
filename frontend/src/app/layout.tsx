@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'شراء الاثاث المستعمل بالمدينة المنورة',
     images: [
       {
-        url: '/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg',
+        url: '/madina/cover.jpeg',
         width: 1200,
         height: 630,
         alt: 'شراء الاثاث المستعمل بالمدينة المنورة',
@@ -42,12 +42,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'شراء الاثاث المستعمل بالمدينة المنورة',
     description: 'نشتري الاثاث المستعمل بالمدينة المنورة بأفضل الأسعار كاش',
-    images: ['/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg'],
+    images: ['/madina/cover.jpeg'],
   },
   icons: {
-    icon: '/madina/buy-furniture-from-madinah-logo.jpeg',
-    shortcut: '/madina/buy-furniture-from-madinah-logo.jpeg',
-    apple: '/madina/buy-furniture-from-madinah-logo.jpeg',
+    icon: '/madina/logo.jpeg',
+    shortcut: '/madina/logo.jpeg',
+    apple: '/madina/logo.jpeg',
   },
   robots: {
     index: true,

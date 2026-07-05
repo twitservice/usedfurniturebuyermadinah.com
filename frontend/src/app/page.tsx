@@ -35,14 +35,14 @@ import arData from '../data/home-arabic.json';
 
 // Unsplash high-quality responsive CDN images for static product view
 const PRODUCT_IMAGES: Record<string, string> = {
-  "/assets/bedroom_set.png": "/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg",
-  "/assets/air_conditioner.png": "/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg",
-  "/assets/refrigerator.png": "/madina/buy-furniture-from-madinah-590130a6-34a7-4885-a97f-bd7679a45b34.jpeg",
-  "/assets/sofa_set.png": "/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg",
-  "/assets/kitchen_cabinets.png": "/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg",
-  "/assets/washing_machine.png": "/madina/buy-furniture-from-madinah-e5c1ea3b-32ae-45e8-a6aa-27acd4d5381a.jpeg",
-  "/assets/cooking_range.png": "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg",
-  "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg": "/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
+  "/assets/bedroom_set.png": "/madina/bed-room-bedroom.jpeg",
+  "/assets/air_conditioner.png": "/madina/ac-air-conditioner.jpeg",
+  "/assets/refrigerator.png": "/madina/fridge.jpeg",
+  "/assets/sofa_set.png": "/madina/sofa-furniture.jpeg",
+  "/assets/kitchen_cabinets.png": "/madina/kitchen.jpeg",
+  "/assets/washing_machine.png": "/madina/washing-machine.jpeg",
+  "/assets/cooking_range.png": "/madina/oven.jpeg",
+  "/madina/cover.jpeg": "/madina/cover.jpeg"
 };
 
 
@@ -92,10 +92,10 @@ export default function App() {
   };
 
   const serviceImages = [
-    "/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg",
-    "/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg",
-    "/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg",
-    "/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg",
+    "/madina/bed-room-bedroom.jpeg",
+    "/madina/sofa-furniture.jpeg",
+    "/madina/ac-air-conditioner.jpeg",
+    "/madina/kitchen.jpeg",
   ];
 
   // Form states for instant WhatsApp valuation
@@ -511,10 +511,10 @@ export default function App() {
               <div 
                 id="hero-graphic" 
                 className="lg:col-span-5 h-full min-h-[240px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl relative flex flex-col items-center justify-center text-slate-600 overflow-hidden border border-slate-200 cursor-pointer group"
-                onClick={() => setFullscreenImage("/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg")}
+                onClick={() => setFullscreenImage("/madina/cover.jpeg")}
               >
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                  src="/madina/buy-furniture-from-madinah-50b20875-a17e-425a-ad7a-3f0c7259f65c.jpeg"
+                  src="/madina/cover.jpeg"
                   alt="Furniture Showroom Madinah"
                   className="absolute inset-0  w-full h-full  object-cover brightness-[0.95] group-hover:scale-105 transition-transform duration-500"
                   priority={true}
@@ -1096,12 +1096,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                  src="/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg"
+                  src="/madina/bed-room-bedroom.jpeg"
                   alt="Bedrooms"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("/madina/buy-furniture-from-madinah-18dedf1a-9278-45a3-8869-bd8a1ffe9f10.jpeg");
+                    setFullscreenImage("/madina/bed-room-bedroom.jpeg");
                   }}
                  />
               </div>
@@ -1124,12 +1124,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                  src="/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg"
+                  src="/madina/sofa-furniture.jpeg"
                   alt="Sofas"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("/madina/buy-furniture-from-madinah-bcb5c23a-674f-46f0-8331-ad402467284c.jpeg");
+                    setFullscreenImage("/madina/sofa-furniture.jpeg");
                   }}
                  />
               </div>
@@ -1152,12 +1152,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                  src="/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg"
+                  src="/madina/ac-air-conditioner.jpeg"
                   alt="Electronics"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("/madina/buy-furniture-from-madinah-2275e9fa-359c-4358-9dec-aa136b8e97e6.jpeg");
+                    setFullscreenImage("/madina/ac-air-conditioner.jpeg");
                   }}
                  />
               </div>
@@ -1180,12 +1180,12 @@ export default function App() {
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                  src="/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg"
+                  src="/madina/kitchen.jpeg"
                   alt="Kitchens"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFullscreenImage("/madina/buy-furniture-from-madinah-cc1f9472-b302-4447-8d95-7a75b29db50a.jpeg");
+                    setFullscreenImage("/madina/kitchen.jpeg");
                   }}
                  />
               </div>
