@@ -1094,7 +1094,7 @@ export default function App() {
 
             {/* Service card 1 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
-              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
+              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/bed-room-bedroom.jpeg"
                   alt="Bedrooms"
@@ -1122,7 +1122,7 @@ export default function App() {
 
             {/* Service card 2 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
-              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
+              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/sofa-furniture.jpeg"
                   alt="Sofas"
@@ -1150,7 +1150,7 @@ export default function App() {
 
             {/* Service card 3 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
-              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
+              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/ac-air-conditioner.jpeg"
                   alt="Electronics"
@@ -1178,7 +1178,7 @@ export default function App() {
 
             {/* Service card 4 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
-              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0">
+              <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
                 <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/madina/kitchen.jpeg"
                   alt="Kitchens"
