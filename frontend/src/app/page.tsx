@@ -1742,19 +1742,18 @@ export default function App() {
           className="fixed inset-0 bg-slate-950/95 z-[100] flex items-center justify-center p-4 sm:p-8 backdrop-blur-sm cursor-zoom-out transition-all duration-300"
           onClick={() => setFullscreenImage(null)}
         >
+          <Image fill sizes="100vw" 
+            src={fullscreenImage} 
+            alt="Fullscreen View" 
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-100 cursor-zoom-out"
+          />
           <button 
-            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white transition-all border border-white/20"
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white transition-all border border-white/20 z-[110]"
             onClick={(e) => { e.stopPropagation(); setFullscreenImage(null); }}
             aria-label="Close fullscreen image"
           >
             <X className="w-6 h-6" />
           </button>
-          <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-            src={fullscreenImage} 
-            alt="Fullscreen View" 
-            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-100 cursor-default"
-            onClick={(e) => e.stopPropagation()}
-          />
         </div>
       )}
 
