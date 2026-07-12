@@ -443,8 +443,13 @@ export default function App() {
         <main id="home-view-container" className="flex-1">
 
           {/* Slogan Banner */}
-          <div id="alert-slogan-bar" className="bg-yellow-50 text-yellow-950 px-4 py-2 text-center text-xs font-black border-b border-yellow-200">
+          <h1 id="alert-slogan-bar" className="bg-yellow-50 text-yellow-950 px-4 py-2 text-center text-xs font-black border-b border-yellow-200">
             {translations.companySlogan}
+          </h1>
+
+          <div>
+            <h1></h1>
+            <p></p>
           </div>
 
           {/* Hero Section (Based on High Density specs & Arabic preferences) */}
@@ -508,17 +513,17 @@ export default function App() {
               </div>
 
               {/* Cover Illustration & Local Mosque Minarets / Living Room Badge Collage */}
-              <div 
-                id="hero-graphic" 
+              <div
+                id="hero-graphic"
                 className="lg:col-span-5 h-full min-h-[240px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl relative flex flex-col items-center justify-center text-slate-600 overflow-hidden border border-slate-200 cursor-pointer group"
                 onClick={() => setFullscreenImage("/madina/cover.jpeg")}
               >
-                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src="/madina/cover.jpeg"
                   alt="Furniture Showroom Madinah"
                   className="absolute inset-0  w-full h-full  object-cover brightness-[0.95] group-hover:scale-105 transition-transform duration-500"
                   priority={true}
-                 />
+                />
 
                 {/* Visual Label overlay */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent p-4 flex flex-col text-white">
@@ -783,13 +788,13 @@ export default function App() {
               {/* Slider Container */}
               <div ref={servicesCarouselRef} className="flex overflow-x-auto gap-5 snap-x snap-mandatory pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                 {translations.categories.list.map((cat: any, idx: number) => (
-                  <div 
-                    key={cat.id} 
+                  <div
+                    key={cat.id}
                     className="w-[85vw] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] shrink-0 snap-start bg-white p-4 border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col cursor-pointer"
                     onClick={() => triggerSimulatedReload('services')}
                   >
                     <div className="aspect-video bg-slate-100 rounded-lg mb-4 overflow-hidden relative border border-slate-100">
-                      <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                      <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         src={serviceImages[idx % serviceImages.length]}
                         alt={cat.name}
                         className=" w-full h-full  object-cover hover:scale-105 transition-transform duration-500"
@@ -797,7 +802,7 @@ export default function App() {
                           e.stopPropagation();
                           setFullscreenImage(serviceImages[idx % serviceImages.length]);
                         }}
-                       />
+                      />
                     </div>
                     <h4 className="font-extrabold text-slate-900 text-sm mb-1.5 line-clamp-1">
                       {cat.name}
@@ -853,16 +858,16 @@ export default function App() {
               {/* Slider Container */}
               <div ref={productsCarouselRef} className="flex overflow-x-auto gap-5 snap-x snap-mandatory pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                 {translations.products.map((prod: any) => (
-                  <div 
-                    key={prod.id} 
+                  <div
+                    key={prod.id}
                     className="w-[85vw] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] shrink-0 snap-start bg-white p-4 border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col group cursor-pointer"
                     onClick={() => {
-                       setSelectedProduct(prod);
-                       triggerSimulatedReload('products');
+                      setSelectedProduct(prod);
+                      triggerSimulatedReload('products');
                     }}
                   >
                     <div className="aspect-video bg-slate-100 rounded-lg mb-4 overflow-hidden relative border border-slate-100">
-                      <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                      <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         src={PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                         alt={prod.title}
                         className=" w-full h-full  object-cover group-hover:scale-105 transition-transform duration-500"
@@ -870,7 +875,7 @@ export default function App() {
                           e.stopPropagation();
                           setFullscreenImage(PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
                         }}
-                       />
+                      />
                       <div className="absolute top-2 right-2 bg-slate-900/80 backdrop-blur-xs text-[10px] font-black text-white px-2 py-1 rounded-md">
                         {prod.category}
                       </div>
@@ -1020,7 +1025,7 @@ export default function App() {
               >
                 <div>
                   <div className="aspect-video bg-slate-100 rounded-lg mb-3 relative overflow-hidden border border-slate-150">
-                    <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                    <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       src={PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                       alt={prod.title}
                       className=" w-full h-full  object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
@@ -1028,7 +1033,7 @@ export default function App() {
                         e.stopPropagation();
                         setFullscreenImage(PRODUCT_IMAGES[prod.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
                       }}
-                     />
+                    />
                     <div className="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-xs text-[9px] font-black text-amber-400 px-2.5 py-0.5 rounded-full">
                       {prod.condition}
                     </div>
@@ -1050,8 +1055,8 @@ export default function App() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-end">                  <span className="text-xs font-black text-blue-600 bg-blue-50 py-1 px-3 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
-                    {lang === 'ar' ? 'عرض تفاصيل' : 'View Details'}
-                  </span>
+                  {lang === 'ar' ? 'عرض تفاصيل' : 'View Details'}
+                </span>
                 </div>
               </div>
             ))}
@@ -1095,7 +1100,7 @@ export default function App() {
             {/* Service card 1 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
-                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src="/madina/bed-room-bedroom.jpeg"
                   alt="Bedrooms"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
@@ -1103,7 +1108,7 @@ export default function App() {
                     e.stopPropagation();
                     setFullscreenImage("/madina/bed-room-bedroom.jpeg");
                   }}
-                 />
+                />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
@@ -1123,7 +1128,7 @@ export default function App() {
             {/* Service card 2 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
-                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src="/madina/sofa-furniture.jpeg"
                   alt="Sofas"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
@@ -1131,7 +1136,7 @@ export default function App() {
                     e.stopPropagation();
                     setFullscreenImage("/madina/sofa-furniture.jpeg");
                   }}
-                 />
+                />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
@@ -1151,7 +1156,7 @@ export default function App() {
             {/* Service card 3 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
-                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src="/madina/ac-air-conditioner.jpeg"
                   alt="Electronics"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
@@ -1159,7 +1164,7 @@ export default function App() {
                     e.stopPropagation();
                     setFullscreenImage("/madina/ac-air-conditioner.jpeg");
                   }}
-                 />
+                />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
@@ -1179,7 +1184,7 @@ export default function App() {
             {/* Service card 4 */}
             <div className="bg-white p-6 border border-slate-200 rounded-xl shadow-xs flex flex-col md:flex-row gap-6 hover:border-slate-350 transition-all">
               <div className="w-full md:w-36 h-36 bg-slate-100 rounded-lg overflow-hidden shrink-0 relative">
-                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src="/madina/kitchen.jpeg"
                   alt="Kitchens"
                   className=" w-full h-full  object-cover cursor-pointer hover:scale-110 transition-transform duration-300"
@@ -1187,7 +1192,7 @@ export default function App() {
                     e.stopPropagation();
                     setFullscreenImage("/madina/kitchen.jpeg");
                   }}
-                 />
+                />
               </div>
               <div>
                 <h3 className="font-extrabold text-lg text-slate-900 mb-2">
@@ -1674,7 +1679,7 @@ export default function App() {
 
             {/* Modal Image display */}
             <div className="aspect-video relative overflow-hidden bg-slate-100 border-b border-slate-200">
-              <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+              <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 src={PRODUCT_IMAGES[selectedProduct.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80"}
                 alt={selectedProduct.title}
                 className=" w-full h-full  object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
@@ -1682,7 +1687,7 @@ export default function App() {
                   e.stopPropagation();
                   setFullscreenImage(PRODUCT_IMAGES[selectedProduct.image] || "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600&q=80");
                 }}
-               />
+              />
               <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-xs text-xs font-black text-amber-400 px-3 py-1 rounded-full">
                 {translations.productsSection.conditionLabel} {selectedProduct.condition}
               </div>
@@ -1703,9 +1708,9 @@ export default function App() {
               </p>
 
               <div className="flex justify-between items-center py-3 border-t border-slate-100 mt-2 bg-slate-50/50 p-3 rounded-xl border border-dashed border-slate-200">                <span className="text-[11px] text-emerald-600 font-black flex items-center gap-1">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>{lang === 'ar' ? 'فحص جودة وضمان' : 'Verified Quality'}</span>
-                </span>
+                <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>{lang === 'ar' ? 'فحص جودة وضمان' : 'Verified Quality'}</span>
+              </span>
               </div>
 
               {/* Direct Buttons to inquire */}
@@ -1738,16 +1743,16 @@ export default function App() {
 
       {/* Fullscreen Image Viewer Modal */}
       {fullscreenImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-slate-950/95 z-[100] flex items-center justify-center p-4 sm:p-8 backdrop-blur-sm cursor-zoom-out transition-all duration-300"
           onClick={() => setFullscreenImage(null)}
         >
-          <Image fill sizes="100vw" 
-            src={fullscreenImage} 
-            alt="Fullscreen View" 
+          <Image fill sizes="100vw"
+            src={fullscreenImage}
+            alt="Fullscreen View"
             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-100 cursor-zoom-out"
           />
-          <button 
+          <button
             className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white transition-all border border-white/20 z-[110]"
             onClick={(e) => { e.stopPropagation(); setFullscreenImage(null); }}
             aria-label="Close fullscreen image"
