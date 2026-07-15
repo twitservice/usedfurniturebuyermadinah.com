@@ -539,103 +539,6 @@ export default function App() {
             </div>
           </section>
 
-          {/* Scrap Metal Buyer Section */}
-          <section id="scrap-metal-section" className="max-w-7xl mx-auto px-4 pt-8 lg:pt-12 pb-4">
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-
-                {/* Text Content */}
-                <div className="flex flex-col text-start">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 text-amber-700 text-xs font-bold rounded-full mb-4 uppercase tracking-wider border border-amber-100 w-fit">
-                    <Sparkles className="w-3 h-3 text-amber-600 animate-spin" />
-                    {lang === 'ar' ? 'خدمة الخردة المميزة' : 'Premium Scrap Service'}
-                  </span>
-
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mb-5 leading-tight tracking-tight">
-                    {lang === 'ar'
-                      ? 'مشتري خردة معادن محترف وموثوق في المدينة المنورة'
-                      : 'Professional & Trusted Scrap Metal Buyer in Madinah'}
-                  </h2>
-
-                  <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                    <p>
-                      {lang === 'ar'
-                        ? 'نحن مشتري خردة معادن محترف وموثوق في المدينة المنورة، ونقدم أفضل أسعار السوق لجميع أنواع الخردة، بما في ذلك النحاس، والحديد، والفولاذ، والألمنيوم، والكابلات الكهربائية، والبطاريات، ووحدات تكييف الهواء المستعملة.'
-                        : 'We are a trusted and professional scrap metal buyer in Madinah, offering the best market prices for all types of scrap materials, including copper, iron, steel, aluminum, electrical cables, batteries, and used air conditioning units.'}
-                    </p>
-                    <p>
-                      {lang === 'ar'
-                        ? 'يوفر فريقنا خدمة جمع سريعة، ووزناً دقيقاً، ودفعاً نقدياً فورياً، مما يجعل العملية سهلة وشفافة وخالية من المتاعب للمنازل، والشركات، والمصانع في جميع أنحاء المدينة المنورة.'
-                        : 'Our experienced team provides fast collection, accurate weighing, and instant cash payment, making the entire process simple, transparent, and hassle-free for homes, businesses, and industrial facilities across Madinah.'}
-                    </p>
-                    <p>
-                      {lang === 'ar'
-                        ? 'نلتزم بتقديم خدمة موثوقة، وتقييم عادل، واستجابة سريعة. سواء كانت لديك كمية صغيرة من الخردة المنزلية أو كميات كبيرة من الخردة الصناعية، فإننا نضمن لك أفضل الأسعار وتجربة سلسة من البداية إلى النهاية.'
-                        : 'We are committed to delivering reliable service, fair pricing, and quick response times. Whether you have a small amount of household scrap or large quantities of industrial scrap, we guarantee competitive prices and a smooth experience from start to finish.'}
-                    </p>
-                    <p className="font-bold text-slate-800">
-                      {lang === 'ar'
-                        ? 'تواصل معنا اليوم للحصول على أفضل أسعار الخردة في المدينة المنورة والاستفادة من خدمة سريعة ودفع فوري.'
-                        : 'Contact us today to get the best scrap prices in Madinah and enjoy fast pickup with instant payment.'}
-                    </p>
-                  </div>
-
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <a href="tel:0579068424" className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-black text-sm flex items-center gap-2 transition-all shadow-md hover:scale-[1.02]">
-                      <Phone className="w-4 h-4 text-emerald-400" />
-                      {lang === 'ar' ? 'اتصل الآن' : 'Call Now'}
-                    </a>
-                    <a href={getWhatsAppLink(lang === 'ar' ? 'السلام عليكم، لدي خردة معادن للبيع في المدينة المنورة وأرغب في تسعيرها.' : 'Hello, I have scrap metal for sale in Madinah and would like a price estimate.')} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl font-black text-sm flex items-center gap-2 transition-all shadow-md hover:scale-[1.02]">
-                      <MessageSquare className="w-4 h-4" />
-                      {lang === 'ar' ? 'واتساب كاش' : 'WhatsApp Cash'}
-                    </a>
-                  </div>
-                </div>
-
-                {/* Images Grid */}
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 h-full">
-                  <div
-                    className="col-span-2 relative h-48 sm:h-64 lg:h-72 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group cursor-pointer"
-                    onClick={() => setFullscreenImage("/madina/Scrap-Metal-Buyer-in-Madinah.jpeg")}
-                  >
-                    <Image
-                      fill
-                      src="/madina/Scrap-Metal-Buyer-in-Madinah.jpeg"
-                      alt={lang === 'ar' ? 'مشتري خردة معادن محترف في المدينة المنورة' : 'Professional Scrap Metal Buyer in Madinah'}
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div
-                    className="relative h-32 sm:h-40 lg:h-48 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group cursor-pointer"
-                    onClick={() => setFullscreenImage("/madina/Scrap-Metal-Buyer-in-Madinah-2.jpeg")}
-                  >
-                    <Image
-                      fill
-                      src="/madina/Scrap-Metal-Buyer-in-Madinah-2.jpeg"
-                      alt={lang === 'ar' ? 'جمع وإعادة تدوير الخردة المعدنية بالمدينة' : 'Scrap Metal Collection and Recycling Madinah'}
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                  </div>
-                  <div
-                    className="relative h-32 sm:h-40 lg:h-48 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group cursor-pointer"
-                    onClick={() => setFullscreenImage("/madina/Scrap-Metal-Buyer-in-Madinah-3.jpeg")}
-                  >
-                    <Image
-                      fill
-                      src="/madina/Scrap-Metal-Buyer-in-Madinah-3.jpeg"
-                      alt={lang === 'ar' ? 'دفع نقدي فوري لخردة المعادن في المدينة' : 'Instant Cash for Scrap Metal in Madinah'}
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </section>
-
           {/* Core Categories Section */}
           <section id="categories-grid-section" className="bg-white py-12 border-y border-slate-200">
             <div className="max-w-7xl mx-auto px-4">
@@ -998,6 +901,104 @@ export default function App() {
               </button>
             </div>
           </section>
+
+          {/* Scrap Metal Buyer Section */}
+          <section id="scrap-metal-section" className="max-w-7xl mx-auto px-4 pt-8 lg:pt-12 pb-4">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+                {/* Text Content */}
+                <div className="flex flex-col text-start">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 text-amber-700 text-xs font-bold rounded-full mb-4 uppercase tracking-wider border border-amber-100 w-fit">
+                    <Sparkles className="w-3 h-3 text-amber-600 animate-spin" />
+                    {lang === 'ar' ? 'خدمة الخردة المميزة' : 'Premium Scrap Service'}
+                  </span>
+
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mb-5 leading-tight tracking-tight">
+                    {lang === 'ar'
+                      ? 'مشتري خردة معادن محترف وموثوق في المدينة المنورة'
+                      : 'Professional & Trusted Scrap Metal Buyer in Madinah'}
+                  </h2>
+
+                  <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+                    <p>
+                      {lang === 'ar'
+                        ? 'نحن مشتري خردة معادن محترف وموثوق في المدينة المنورة، ونقدم أفضل أسعار السوق لجميع أنواع الخردة، بما في ذلك النحاس، والحديد، والفولاذ، والألمنيوم، والكابلات الكهربائية، والبطاريات، ووحدات تكييف الهواء المستعملة.'
+                        : 'We are a trusted and professional scrap metal buyer in Madinah, offering the best market prices for all types of scrap materials, including copper, iron, steel, aluminum, electrical cables, batteries, and used air conditioning units.'}
+                    </p>
+                    <p>
+                      {lang === 'ar'
+                        ? 'يوفر فريقنا خدمة جمع سريعة، ووزناً دقيقاً، ودفعاً نقدياً فورياً، مما يجعل العملية سهلة وشفافة وخالية من المتاعب للمنازل، والشركات، والمصانع في جميع أنحاء المدينة المنورة.'
+                        : 'Our experienced team provides fast collection, accurate weighing, and instant cash payment, making the entire process simple, transparent, and hassle-free for homes, businesses, and industrial facilities across Madinah.'}
+                    </p>
+                    <p>
+                      {lang === 'ar'
+                        ? 'نلتزم بتقديم خدمة موثوقة، وتقييم عادل، واستجابة سريعة. سواء كانت لديك كمية صغيرة من الخردة المنزلية أو كميات كبيرة من الخردة الصناعية، فإننا نضمن لك أفضل الأسعار وتجربة سلسة من البداية إلى النهاية.'
+                        : 'We are committed to delivering reliable service, fair pricing, and quick response times. Whether you have a small amount of household scrap or large quantities of industrial scrap, we guarantee competitive prices and a smooth experience from start to finish.'}
+                    </p>
+                    <p className="font-bold text-slate-800">
+                      {lang === 'ar'
+                        ? 'تواصل معنا اليوم للحصول على أفضل أسعار الخردة في المدينة المنورة والاستفادة من خدمة سريعة ودفع فوري.'
+                        : 'Contact us today to get the best scrap prices in Madinah and enjoy fast pickup with instant payment.'}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <a href="tel:0579068424" className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-black text-sm flex items-center gap-2 transition-all shadow-md hover:scale-[1.02]">
+                      <Phone className="w-4 h-4 text-emerald-400" />
+                      {lang === 'ar' ? 'اتصل الآن' : 'Call Now'}
+                    </a>
+                    <a href={getWhatsAppLink(lang === 'ar' ? 'السلام عليكم، لدي خردة معادن للبيع في المدينة المنورة وأرغب في تسعيرها.' : 'Hello, I have scrap metal for sale in Madinah and would like a price estimate.')} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl font-black text-sm flex items-center gap-2 transition-all shadow-md hover:scale-[1.02]">
+                      <MessageSquare className="w-4 h-4" />
+                      {lang === 'ar' ? 'واتساب كاش' : 'WhatsApp Cash'}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Images Grid */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 h-full">
+                  <div
+                    className="col-span-2 relative h-48 sm:h-64 lg:h-72 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group cursor-pointer"
+                    onClick={() => setFullscreenImage("/madina/Scrap-Metal-Buyer-in-Madinah.jpeg")}
+                  >
+                    <Image
+                      fill
+                      src="/madina/Scrap-Metal-Buyer-in-Madinah.jpeg"
+                      alt={lang === 'ar' ? 'مشتري خردة معادن محترف في المدينة المنورة' : 'Professional Scrap Metal Buyer in Madinah'}
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div
+                    className="relative h-32 sm:h-40 lg:h-48 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group cursor-pointer"
+                    onClick={() => setFullscreenImage("/madina/Scrap-Metal-Buyer-in-Madinah-2.jpeg")}
+                  >
+                    <Image
+                      fill
+                      src="/madina/Scrap-Metal-Buyer-in-Madinah-2.jpeg"
+                      alt={lang === 'ar' ? 'جمع وإعادة تدوير الخردة المعدنية بالمدينة' : 'Scrap Metal Collection and Recycling Madinah'}
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div
+                    className="relative h-32 sm:h-40 lg:h-48 rounded-2xl overflow-hidden border border-slate-200 shadow-sm group cursor-pointer"
+                    onClick={() => setFullscreenImage("/madina/Scrap-Metal-Buyer-in-Madinah-3.jpeg")}
+                  >
+                    <Image
+                      fill
+                      src="/madina/Scrap-Metal-Buyer-in-Madinah-3.jpeg"
+                      alt={lang === 'ar' ? 'دفع نقدي فوري لخردة المعادن في المدينة' : 'Instant Cash for Scrap Metal in Madinah'}
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
 
           {/* Neighborhoods Area Map Grid */}
           <section id="neighborhoods-section" className="bg-white py-12 border-t border-slate-200">
