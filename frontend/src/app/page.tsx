@@ -42,6 +42,7 @@ const PRODUCT_IMAGES: Record<string, string> = {
   "/assets/kitchen_cabinets.png": "/madina/kitchen.jpeg",
   "/assets/washing_machine.png": "/madina/washing-machine.jpeg",
   "/assets/cooking_range.png": "/madina/oven.jpeg",
+  "/assets/scrap_metal.png": "/madina/Scrap-Metal-Buyer-in-Madinah.jpeg",
   "/madina/cover.jpeg": "/madina/cover.jpeg"
 };
 
@@ -96,6 +97,7 @@ export default function App() {
     "/madina/sofa-furniture.jpeg",
     "/madina/ac-air-conditioner.jpeg",
     "/madina/kitchen.jpeg",
+    "/madina/Scrap-Metal-Buyer-in-Madinah.jpeg",
   ];
 
   // Form states for instant WhatsApp valuation

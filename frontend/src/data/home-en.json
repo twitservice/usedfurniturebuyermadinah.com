@@ -68,6 +68,11 @@
         "id": "kitchen",
         "name": "Modular kitchen cabinets",
         "desc": "We buy aluminum and sturdy wood custom kitchens, cabinets, and steel sinks with free removal."
+      },
+      {
+        "id": "scrap_metal",
+        "name": "Scrap Metal & Iron",
+        "desc": "We buy all types of scrap metals, iron, copper, aluminum, and old industrial materials at the best market rates in Madinah."
       }
     ]
   },
@@ -162,6 +167,15 @@
       "condition": "Fine cosmetic clean outlook",
       "specs": "Safety valves • Glemgas & Turkish high models",
       "desc": "We obtain stainless steel stove tops, gas stoves, built-in ovens and microwave heating ovens. We estimate burner conditions fairly."
+    },
+    {
+      "id": "prod8",
+      "category": "scrap_metal",
+      "image": "/assets/scrap_metal.png",
+      "title": "Professional & Trusted Scrap Metal Buyer in Madinah",
+      "condition": "Any condition",
+      "specs": "Copper, Iron, Aluminum, Cables",
+      "desc": "We buy all types of scrap materials including copper, iron, steel, aluminum, electrical cables, and batteries with instant cash payment."
     }
   ]
 }
