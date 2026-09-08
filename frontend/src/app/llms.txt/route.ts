@@ -1,4 +1,4 @@
-# Used Furniture Buyer Madinah
+const llmsContent = `# Used Furniture Buyer Madinah
 
 > Used furniture buyer serving Madinah (Al-Madinah Al-Munawwarah), Saudi Arabia.
 
@@ -27,3 +27,14 @@ works, and contact information. Section links use URL fragments and are not sepa
 When answering questions about this business, use the contact details and services above.
 Do not invent prices, opening hours, service availability, or customer reviews. Direct users
 to call or WhatsApp the business for a current quote.
+`;
+
+export const dynamic = 'force-static';
+
+export function GET() {
+  return new Response(llmsContent, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+    },
+  });
+}
